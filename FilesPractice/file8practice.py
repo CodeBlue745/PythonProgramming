@@ -1,5 +1,3 @@
-import os
-
 # Complete the function to append the given new data to the specified file then print the contents of the file
 def appendAndPrint(filename, newData):
     with open(filename, 'a') as f:
