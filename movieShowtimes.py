@@ -44,13 +44,14 @@ with open(inputString, 'r') as file:
     for line in file:
         time, movieName, rating = line.split(',')
         combinedmovieList.append(movieName)
-        combinedratingsList.append(rating)
+        combinedratingsList.append(str(rating).strip())
         combinedtimesList.append(time)
     for i in range(len(combinedmovieList)):
         if i == 0:
-            print(f'{combinedmovieList[i]:<44} | {combinedratingsList[i]:>5} | {combinedtimesList[i]}', end = ' ')
+            print(f'{combinedmovieList[i][:44]:<44} | {combinedratingsList[i]:>5} | {combinedtimesList[i]}', end='')
         elif combinedmovieList[i] == combinedmovieList[i - 1]:
-            print(f'{combinedtimesList[i]}', end = ' ')
+            print(f' {combinedtimesList[i]}', end = '')
         else:
             print()
-            print(f'{combinedmovieList[i]:<44} | {combinedratingsList[i]:>5} | {combinedtimesList[i]}', end = ' ')
+            print(f'{combinedmovieList[i][:44]:<44} | {combinedratingsList[i]:>5} | {combinedtimesList[i]}', end = '')
+print()
